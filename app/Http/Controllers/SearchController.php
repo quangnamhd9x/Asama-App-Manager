@@ -9,13 +9,13 @@ class SearchController extends Controller
 {
     public function index()
     {
-        $agency = DB::table('agencys')->get();
-        return view('agency.list', compact('agency'));
+        $agencies = DB::table('agencies')->get();
+        return view('agency.list', compact('agencies'));
     }
 
     public function search(Request $request)
     {
-        $agency = DB::table('agencys')->where('title','LIKE','%'.$request->search.'%')->get();
-        return view('agency.search', compact('agency'));
+        $agencies = DB::table('agencies')->where('name_agency','LIKE','%'.$request->search.'%')->get();
+        return view('agency.search', compact('agencies'));
     }
 }

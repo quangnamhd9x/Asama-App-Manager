@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>Danh sách đại lý</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +12,7 @@
 </head>
 <style>
     body {
-        background-color: aliceblue;
+        background-color: lightcyan;
     }
     .table {
         background-color: white;
@@ -24,7 +24,7 @@
     <tr>
         <td><a href="{{route('agency.create')}}" class="btn btn-success">+ Thêm mới</a></td>
         <td style="text-align: right">
-            <form action="{{route('agency.resultSearch')}}" method="post">
+            <form action="{{route('agency.resultSearch')}}" method="get">
                 @csrf
                 <input id="search" name="search" type="text" placeholder="Nhập nội dung tìm kiếm">
                 <button type="submit" class="btn btn-info">Tìm kiếm</button>
@@ -34,30 +34,30 @@
 </table>
 <h1 align="center">Danh sách đại lý phân phối</h1>
 <hr>
-<table align="center" class="table" style="width: 1200px">
+<table id="td" align="center" class="table" style="width: 1400px">
     <thead class="thead-dark">
-    <tr>
-        <th scope="col">Mã số đại lý</th>
-        <th scope="col">Tên đại lý</th>
-        <th scope="col">Điện thoại</th>
-        <th scope="col">Email</th>
-        <th scope="col">Địa chỉ</th>
-        <th scope="col">Tên người quản lý</th>
-        <th scope="col">Trạng thái</th>
-        <th scope="col">Chức năng</th>
+    <tr style="text-align: center">
+        <th style="background-color: lightskyblue; color: black;border: 1px solid black" scope="col">Mã số đại lý</th>
+        <th style="background-color: lightskyblue; color: black;border: 1px solid black" scope="col">Tên đại lý</th>
+        <th style="background-color: lightskyblue; color: black;border: 1px solid black" scope="col">Điện thoại</th>
+        <th style="background-color: lightskyblue; color: black;border: 1px solid black" scope="col">Email</th>
+        <th style="background-color: lightskyblue; color: black;border: 1px solid black" scope="col">Địa chỉ</th>
+        <th style="background-color: lightskyblue; color: black;border: 1px solid black" scope="col">Tên người quản lý</th>
+        <th style="background-color: lightskyblue; color: black;border: 1px solid black" scope="col">Trạng thái</th>
+        <th style="background-color: lightskyblue; color: black;border: 1px solid black" scope="col">Chức năng</th>
     </tr>
     </thead>
     <tbody>
-    @forelse($agencys as $key => $agency)
+    @forelse($agencies as $key => $agency)
         <tr>
-            <td>{{$agency->id}}</td>
-            <td>{{$agency->name_agency}}</td>
-            <td>{{$agency->phone}}</td>
-            <td>{{$agency->email}}</td>
-            <td>{{$agency->address}}</td>
-            <td>{{$agency->name_manager}}</td>
-            <td>{{$agency->status}}</td>
-            <td>
+            <td style="text-align: center; border: 1px solid black;">{{$agency->id}}</td>
+            <td style="border: 1px solid black">{{$agency->name_agency}}</td>
+            <td style="border: 1px solid black">{{$agency->phone}}</td>
+            <td style="border: 1px solid black">{{$agency->email}}</td>
+            <td style="border: 1px solid black">{{$agency->address}}</td>
+            <td style="border: 1px solid black">{{$agency->name_manager}}</td>
+            <td style="border: 1px solid black">{{$agency->status}}</td>
+            <td style="text-align: center;border: 1px solid black">
                 <a class="btn btn-warning" href="{{route('agency.edit', $agency->id)}}">Edit</a>
                 <a class="btn btn-danger" onclick="return confirm('Are your sure?')"
                    href="{{route('agency.destroy', $agency->id)}}">Delete</a>

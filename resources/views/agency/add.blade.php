@@ -67,7 +67,7 @@
         </tr>
         <tr>
             <td style="text-align: right" colspan="2">
-                <button type="submit" class="btn btn-success">Thêm</button>
+                <button type="submit" class="btn btn-info">Thêm</button>
             </td>
         </tr>
         </thead>

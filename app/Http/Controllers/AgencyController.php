@@ -15,8 +15,8 @@ class AgencyController extends Controller
      */
     public function index()
     {
-        $agencys = Agency::all();
-        return view('agency.list', compact('agencys'));
+        $agencies = Agency::all();
+        return view('agency.list', compact('agencies'));
     }
 
     /**
