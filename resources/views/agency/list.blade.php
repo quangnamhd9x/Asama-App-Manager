@@ -52,7 +52,7 @@
         <tr>
             <td style="text-align: center; border: 1px solid black;">{{$agency->id}}</td>
             <td style="border: 1px solid black">{{$agency->name_agency}}</td>
-            <td style="border: 1px solid black">{{$agency->phone}}</td>
+            <td style="border: 1px solid black">0{{$agency->phone}}</td>
             <td style="border: 1px solid black">{{$agency->email}}</td>
             <td style="border: 1px solid black">{{$agency->address}}</td>
             <td style="border: 1px solid black">{{$agency->name_manager}}</td>
